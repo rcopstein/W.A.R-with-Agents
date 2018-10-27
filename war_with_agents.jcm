@@ -1,0 +1,11 @@
+mas war_with_agents {
+	
+    agent player1 : sample_agent.asl {
+    	focus: world.map
+    }
+    
+    workspace world {
+		artifact map: world.Map()
+	}
+    
+}
