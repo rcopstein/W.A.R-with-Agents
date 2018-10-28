@@ -10,15 +10,10 @@
 /* Plans */
 
 +!start : true <-
-	attack("A", T);
-	if (T) {
-		.print("Conquered!");
-		+conquer("A")
-	}
-	else {
-		.print("Didn't conquer!");
-		+conquer("A")
-	}
+	distance("A", "D", D)
+	borders("A", B)
+	.print(B)
+	.print(D)
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

@@ -2,6 +2,9 @@ package world;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 import cartago.*;
 
@@ -14,7 +17,7 @@ public class Map extends Artifact {
 	
 	// Functions
 	
-	private Territory getTerritory(String name) {
+	private Territory _getTerritory(String name) {
 		for (Territory territory : territories) {
 			if (territory.getName().equals(name)) {
 				return territory;
@@ -23,14 +26,66 @@ public class Map extends Artifact {
 		
 		return null;
 	}
+	private int _distanceToTerritory(Territory a, Territory b) {
+		
+		Queue<Territory> stack = new ArrayBlockingQueue<Territory>(territories.size());
+		Queue<Integer> dists = new ArrayBlockingQueue<Integer>(territories.size());
+		HashSet<Territory> marks = new HashSet<Territory>();
+		
+		stack.add(a);
+		dists.add(0);
+		marks.add(a);
+		
+		while (!stack.isEmpty()) {
+			
+			Territory t = stack.poll();
+			Integer d = dists.poll();
+			
+			if (t == b) return d;
+			
+			for (Territory tt : borders.get(t)) {
+				if (!marks.contains(tt)) {
+					stack.add(tt);
+					dists.add(d+1);
+				}
+			}
+			
+			marks.add(t);
+			
+		}
+		
+		return -1;
+		
+	}
 	
 	// Operations
 	
 	@OPERATION
 	void attack(String name, OpFeedbackParam<Boolean> result) {
 		
-		Territory t = getTerritory(name);
+		Territory t = _getTerritory(name);
 		result.set(t != null);
+		
+	}
+	@OPERATION
+	void distance(String from, String to, OpFeedbackParam<Integer> result) {
+		
+		Territory a = _getTerritory(from);
+		Territory b = _getTerritory(to);
+		
+		result.set(_distanceToTerritory(a, b));
+		
+	}
+	@OPERATION
+	void borders(String from, OpFeedbackParam<String[]> result) {
+		
+		Territory t = _getTerritory(from);
+		Territory[] b = borders.get(t);
+		
+		String[] s = new String[b.length];
+		for (int i = 0; i < b.length; ++i) s[i] = b[i].getName(); 
+		
+		result.set(s);
 		
 	}
 	
