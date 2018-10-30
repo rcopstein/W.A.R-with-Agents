@@ -18,10 +18,18 @@ order([]).
 	?order(L);
 	-order(L);
 	+order([P|L]);
+	
+	.print([P|L]);
+	?sendBack([P|L], J);
+	.print(J);
 	.
 	
 +playersReady(N) : numPlayers(M) & M == N <-
 	.print("Done!");
+	.
+
++?sendBack([H|T], X) <-
+	.concat(T, [H], X);
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
