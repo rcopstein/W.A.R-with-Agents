@@ -1,5 +1,6 @@
 package world;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -10,10 +11,21 @@ import cartago.*;
 
 public class Map extends Artifact {
 	
+	// Singleton
+	
+	private static Map _instance = null;
+	public static Map getInstance() { return _instance; }
+	
 	// Variables
 	
 	ArrayList<Territory> territories;
 	HashMap<Territory, Territory[]> borders;
+	
+	// Getters
+	
+	public List<Territory> getTerritories() {
+		return territories;
+	}
 	
 	// Functions
 	
@@ -68,15 +80,6 @@ public class Map extends Artifact {
 		
 	}
 	@OPERATION
-	void distance(String from, String to, OpFeedbackParam<Integer> result) {
-		
-		Territory a = _getTerritory(from);
-		Territory b = _getTerritory(to);
-		
-		result.set(_distanceToTerritory(a, b));
-		
-	}
-	@OPERATION
 	void borders(String from, OpFeedbackParam<String[]> result) {
 		
 		Territory t = _getTerritory(from);
@@ -88,6 +91,15 @@ public class Map extends Artifact {
 		result.set(s);
 		
 	}
+	@OPERATION
+	void distance(String from, String to, OpFeedbackParam<Integer> result) {
+		
+		Territory a = _getTerritory(from);
+		Territory b = _getTerritory(to);
+		
+		result.set(_distanceToTerritory(a, b));
+		
+	}
 	
 	// Constructor
 	
@@ -97,6 +109,7 @@ public class Map extends Artifact {
 		borders = new HashMap<Territory, Territory[]>();
 		
 		initTerritories();
+		_instance = this;
 		
 	}
 	void initTerritories() {

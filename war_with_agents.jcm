@@ -1,11 +1,20 @@
 mas war_with_agents {
 	
+	agent roundManager : round_manager.asl {}
+	
     agent player1 : sample_agent.asl {
     	focus: world.map
+    	focus: world.obj
+    }
+    
+    agent player2 : sample_agent.asl {
+    	focus: world.map
+    	focus: world.obj
     }
     
     workspace world {
 		artifact map: world.Map()
+		artifact obj: world.ObjectiveManager()
 	}
     
 }
