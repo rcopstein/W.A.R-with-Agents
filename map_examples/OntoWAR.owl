@@ -1,0 +1,1969 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343">
+    <Prefix name="" IRI="http://www.semanticweb.org/artur/ontologies/2014/10/untitled-ontology-343#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AchieveMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AchievementGoal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Add_Troops"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ag_Belief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskAllMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AskIfMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attack_Territory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Border"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Borders"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Buy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Buy_Card"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Card"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Card_Deck"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conquer_Continent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conquer_Continents"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conquer_Territories"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conquer_Territory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conquered_Territories"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Continent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Env_Percept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Move"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Move_Troops"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservableEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerceptBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Place_Troops"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Player"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SelfBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TellHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TellMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Territory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TestGoal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trade_Cards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Troop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnachieveMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UntellHowMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UntellMessage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vanquish_Player"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Victory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ObligationNorm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#PermissionNorm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ProhibitionNorm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Borders"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Conquered_By"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_is-focused"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EA_is-in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasBorder"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OA_has-member"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Prov_Attack"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Prov_Buy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Prov_Move"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Prov_Place"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Prov_Trade"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Win"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTroops"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ContainsTroops"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Africa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alaska"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aral"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Argentina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Asia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Australia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Borneo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Brasil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#California"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#China"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Congo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dudinka"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Egypt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#England"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Europe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Germany"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Greenland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Iceland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#India"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Japan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Labrador"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mackenzie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Madagascar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mexico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Middle_East"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mongolia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moscow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#New_Guinea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#New_York"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nigeria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#North_America"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Oceania"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Omsk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ottawa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peru"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_Black"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_Blue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_Green"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_Red"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_White"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Player_Yellow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Poland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Portugal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Siberia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#South_Africa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#South_America"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sudan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sumatra"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sweden"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tchita"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vancouver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Venezuela"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vietnam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AchieveMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AchievementGoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Add_Troops"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskAllMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AskIfMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attack"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attack_Territory"/>
+        <Class IRI="#ExternalAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Border"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Borders"/>
+        <Class IRI="#PerceptBelief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buy"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buy_Card"/>
+        <Class IRI="#ExternalAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Card"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Card_Deck"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conquer_Continent"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conquer_Continents"/>
+        <Class IRI="#Victory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conquer_Territories"/>
+        <Class IRI="#Victory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conquer_Territory"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conquered_Territories"/>
+        <Class IRI="#PerceptBelief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Continent"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalAction"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalAction"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Move"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Move_Troops"/>
+        <Class IRI="#ExternalAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObservableEvent"/>
+        <Class IRI="#Env_Percept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerceptBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Place_Troops"/>
+        <Class IRI="#ExternalAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Player"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SelfBelief"/>
+        <Class IRI="#Ag_Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TellHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TellMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Territory"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Territory"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#Conquered_By"/>
+            <Class IRI="#Player"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Territory"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#ContainsTroops"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TestGoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trade"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trade_Cards"/>
+        <Class IRI="#ExternalAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Troop"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnachieveMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UntellHowMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UntellMessage"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vanquish_Player"/>
+        <Class IRI="#Victory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Victory"/>
+        <Class IRI="#AchievementGoal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ObligationNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#PermissionNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#ProhibitionNorm"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+        <Class IRI="#Env_Percept"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Attack_Territory"/>
+        <Class IRI="#Buy_Card"/>
+        <Class IRI="#Move_Troops"/>
+        <Class IRI="#Place_Troops"/>
+        <Class IRI="#Trade_Cards"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Borders"/>
+        <Class IRI="#Conquered_Territories"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Continent"/>
+        <Class IRI="#Territory"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#Africa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Alaska"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Aral"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Argentina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#Asia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Australia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Borneo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Brasil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#California"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#China"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Congo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Dudinka"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Egypt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#England"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#Europe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Greenland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Iceland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#India"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Japan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Labrador"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Madagascar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Middle_East"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Mongolia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Moscow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#New_Guinea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#New_York"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Nigeria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#North_America"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#Oceania"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Peru"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_Black"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_Blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_Green"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_Red"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_White"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Player"/>
+        <NamedIndividual IRI="#Player_Yellow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Siberia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#South_Africa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Continent"/>
+        <NamedIndividual IRI="#South_America"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Sumatra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Sweden"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Venezuela"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Vietnam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Territory"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#Congo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#Egypt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#Madagascar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#Nigeria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#South_Africa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Africa"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Alaska"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Alaska"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Alaska"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Aral"/>
+        <NamedIndividual IRI="#China"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Aral"/>
+        <NamedIndividual IRI="#India"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Aral"/>
+        <NamedIndividual IRI="#Middle_East"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Aral"/>
+        <NamedIndividual IRI="#Moscow"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Aral"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Argentina"/>
+        <NamedIndividual IRI="#Brasil"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Argentina"/>
+        <NamedIndividual IRI="#Peru"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Aral"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#China"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Dudinka"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#India"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Japan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Middle_East"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Mongolia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Siberia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Vietnam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Asia"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Australia"/>
+        <NamedIndividual IRI="#Borneo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Australia"/>
+        <NamedIndividual IRI="#New_Guinea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Australia"/>
+        <NamedIndividual IRI="#Sumatra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Borneo"/>
+        <NamedIndividual IRI="#Australia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Borneo"/>
+        <NamedIndividual IRI="#New_Guinea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Borneo"/>
+        <NamedIndividual IRI="#Vietnam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Brasil"/>
+        <NamedIndividual IRI="#Argentina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Brasil"/>
+        <NamedIndividual IRI="#Nigeria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Brasil"/>
+        <NamedIndividual IRI="#Peru"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Brasil"/>
+        <NamedIndividual IRI="#Venezuela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#California"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#California"/>
+        <NamedIndividual IRI="#New_York"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#California"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#California"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#India"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#Japan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#Mongolia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#Vietnam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#China"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Congo"/>
+        <NamedIndividual IRI="#Nigeria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Congo"/>
+        <NamedIndividual IRI="#South_Africa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Congo"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Dudinka"/>
+        <NamedIndividual IRI="#Mongolia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Dudinka"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Dudinka"/>
+        <NamedIndividual IRI="#Siberia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Dudinka"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Egypt"/>
+        <NamedIndividual IRI="#Middle_East"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Egypt"/>
+        <NamedIndividual IRI="#Nigeria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Egypt"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Egypt"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Egypt"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#England"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#England"/>
+        <NamedIndividual IRI="#Iceland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#England"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#England"/>
+        <NamedIndividual IRI="#Sweden"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#England"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Germany"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Iceland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Moscow"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Europe"/>
+        <NamedIndividual IRI="#Sweden"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Germany"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Germany"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Greenland"/>
+        <NamedIndividual IRI="#Iceland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Greenland"/>
+        <NamedIndividual IRI="#Labrador"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Greenland"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#India"/>
+        <NamedIndividual IRI="#Middle_East"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#India"/>
+        <NamedIndividual IRI="#Sumatra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#India"/>
+        <NamedIndividual IRI="#Vietnam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Japan"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Labrador"/>
+        <NamedIndividual IRI="#New_York"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Labrador"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Madagascar"/>
+        <NamedIndividual IRI="#South_Africa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Madagascar"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <NamedIndividual IRI="#New_York"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mexico"/>
+        <NamedIndividual IRI="#Venezuela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Middle_East"/>
+        <NamedIndividual IRI="#Moscow"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Middle_East"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mongolia"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Mongolia"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Moscow"/>
+        <NamedIndividual IRI="#Omsk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Moscow"/>
+        <NamedIndividual IRI="#Poland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Moscow"/>
+        <NamedIndividual IRI="#Sweden"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#New_York"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Nigeria"/>
+        <NamedIndividual IRI="#Portugal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Nigeria"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Alaska"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#California"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Greenland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Labrador"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Mackenzie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Mexico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#New_York"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Ottawa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#North_America"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Oceania"/>
+        <NamedIndividual IRI="#Australia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Oceania"/>
+        <NamedIndividual IRI="#Borneo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Oceania"/>
+        <NamedIndividual IRI="#New_Guinea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#Oceania"/>
+        <NamedIndividual IRI="#Sumatra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Omsk"/>
+        <NamedIndividual IRI="#China"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Ottawa"/>
+        <NamedIndividual IRI="#Vancouver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Peru"/>
+        <NamedIndividual IRI="#Venezuela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Siberia"/>
+        <NamedIndividual IRI="#Tchita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Siberia"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#South_Africa"/>
+        <NamedIndividual IRI="#Sudan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#South_America"/>
+        <NamedIndividual IRI="#Argentina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#South_America"/>
+        <NamedIndividual IRI="#Brasil"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#South_America"/>
+        <NamedIndividual IRI="#Peru"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Contains"/>
+        <NamedIndividual IRI="#South_America"/>
+        <NamedIndividual IRI="#Venezuela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Borders"/>
+        <NamedIndividual IRI="#Tchita"/>
+        <NamedIndividual IRI="#Vladivostok"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Borders"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Conquered_By"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Contains"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasBorder"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Prov_Attack"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Prov_Buy"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Prov_Move"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Prov_Place"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Prov_Trade"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Win"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTroops"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+    </SubObjectPropertyOf>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#Borders"/>
+    </SymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Borders"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Borders"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Contains"/>
+        <Class IRI="#Continent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_is-focused"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#EA_is-in"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasBorder"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OA_has-member"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Prov_Attack"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Prov_Buy"/>
+        <Class IRI="#Card_Deck"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Prov_Move"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Prov_Place"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Prov_Trade"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Win"/>
+        <Class IRI="#Player"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTroops"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTroops"/>
+            <Class IRI="#Territory"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Norm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ag_has-belief"/>
+        <Class IRI="#Ag_Belief"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Ag_is-triggered-by"/>
+        <ObjectUnionOf>
+            <Class IRI="#Ag_Belief"/>
+            <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Borders"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Contains"/>
+        <Class IRI="#Territory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_can-perceive"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_is-focused"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#EA_is-in"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasBorder"/>
+        <Class IRI="#Border"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OA_adopts-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OA_has-member"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Prov_Attack"/>
+        <Class IRI="#Attack"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Prov_Buy"/>
+        <Class IRI="#Buy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Prov_Move"/>
+        <Class IRI="#Move"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Prov_Place"/>
+        <Class IRI="#Add_Troops"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Prov_Trade"/>
+        <Class IRI="#Trade"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Win"/>
+        <Class IRI="#Victory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTroops"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTroops"/>
+            <Class IRI="#Troop"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_contains-subgoal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_extends-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-mission"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Mission"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_targets-role"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/6/untitled-ontology-178#Org_Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Artifact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+        <Class IRI="#Env_Percept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-goal"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Goal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Plan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-receiver"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_sends-message"/>
+        <Class IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ContainsTroops"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#ContainsTroops"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ContainsTroops"/>
+        <Class IRI="#Territory"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#ContainsTroops"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl:var#s"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#EA_is-in"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#EA_can-perceive"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+                <Variable IRI="urn:swrl:var#space"/>
+                <Variable IRI="urn:swrl:var#artifact"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+                <Variable IRI="urn:swrl:var#artifact"/>
+                <Variable IRI="urn:swrl:var#op"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-operation"/>
+                <Variable IRI="urn:swrl:var#space"/>
+                <Variable IRI="urn:swrl:var#op"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_contains-artifact"/>
+                <Variable IRI="urn:swrl:var#space"/>
+                <Variable IRI="urn:swrl:var#artifact"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl:var#artifact"/>
+                <Variable IRI="urn:swrl:var#percept"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl:var#space"/>
+                <Variable IRI="urn:swrl:var#percept"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_has-subspace"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl:var#b"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-249#Env_provides-percept"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-plan"/>
+                <Variable IRI="urn:swrl:var#ag"/>
+                <Variable IRI="urn:swrl:var#pl"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+                <Variable IRI="urn:swrl:var#pl"/>
+                <Variable IRI="urn:swrl:var#ac"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_has-action"/>
+                <Variable IRI="urn:swrl:var#ag"/>
+                <Variable IRI="urn:swrl:var#ac"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Action</IRI>
+        <Literal>An action is what the agent does that effects the environment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/artur/ontologies/2014/9/untitled-ontology-260#Ag_Message</IRI>
+        <Literal>A message goes from one agent to another.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+
