@@ -19,17 +19,34 @@ order([]).
 	-order(L);
 	+order([P|L]);
 	
-	.print([P|L]);
-	?sendBack([P|L], J);
-	.print(J);
 	.
 	
 +playersReady(N) : numPlayers(M) & M == N <-
-	.print("Done!");
+	?whosNext(H);
+	// .send(H, tell, turn);
 	.
+
++endTurn(P) <-
+	.print(P, "s Turn Ended");
+	-endTurn(P)[source(P)];
+	.send(P, untell, turn);
+	
+	?whosNext(H);
+	.send(H, tell, turn);
+	.
+
+/* Auxiliary Plans */
 
 +?sendBack([H|T], X) <-
 	.concat(T, [H], X);
+	.
+
++?whosNext(X) <-
+	?order([H|T]);
+	-order([H|T]);
+	?sendBack([H|T], L);
+	+order(L);
+	X = H;
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

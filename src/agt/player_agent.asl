@@ -16,17 +16,10 @@
 	!addObjectives(T);
 	.
 
-+round(P) : .my_name(N) & (P == N) <-
-	.print(X);
-	.print(P);
-	
-	-round(P);
-	endTurn;
-	.
-	
-+round(P) : .my_name(N) & not(P == N) <-
-	.print(P);
-	-round(P);
++turn <-
+	.my_name(N);
+	.print("Playing: ", N);
+	.send("roundManager", tell, endTurn(N));
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
