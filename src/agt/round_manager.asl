@@ -33,7 +33,11 @@ order([]).
 	.
 
 +allTerritoriesPicked <-
-	-allTerritoriesPicked[source(mapManager)];
+	-allTerritoriesPicked[source(_)];
+	-+phase("objective");
+	.
++allObjectivesPicked <-
+	-allObjectivesPicked[source(_)];
 	-+phase("play");
 	.
 

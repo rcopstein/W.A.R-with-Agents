@@ -21,6 +21,7 @@
 	.print("Phase ", P);
 	
 	if (P == "pick") { !pickOne }
+	elif (P == "objective") { !getObjective }
 	elif (P == "play") { }
 	
 	.my_name(N);
@@ -32,6 +33,10 @@
 	.my_name(P);
 	.send("mapManager", askOne, randomTerritoryNotTaken(T), randomTerritoryNotTaken(T));
 	.send("mapManager", tell, pick(P, T));
+	.
++!getObjective <-
+	.send("objManager", askOne, objectives(X), objectives(X));
+	.print(X);
 	.
 
 +!endTurn <-

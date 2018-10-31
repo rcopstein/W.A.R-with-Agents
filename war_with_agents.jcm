@@ -4,6 +4,8 @@ mas war_with_agents {
 	
 	agent mapManager : map_manager.asl {}
 	
+	agent objManager : obj_manager.asl {}
+	
     agent player1 : player_agent.asl {}
     
     agent player2 : player_agent.asl {}
