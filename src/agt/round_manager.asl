@@ -2,13 +2,13 @@
 
 playersReady(0).
 numPlayers(2).
-phase("None").
+phase("none").
 order([]).
 
 /* Initial goals */
 
 /* Plans */
-	
+
 +ready(P) <-
 
 	?playersReady(X);
@@ -20,10 +20,25 @@ order([]).
 	+order([P|L]);
 	
 	.
-	
+
 +playersReady(N) : numPlayers(M) & M == N <-
+
+	-playersReady(_);
+	.abolish(ready(_));
+
 	?whosNext(H);
-	// .send(H, tell, turn);
+	-+phase("pick");
+	.send(H, tell, turn);
+	
+	.
+
++allTerritoriesPicked <-
+	-allTerritoriesPicked[source(mapManager)];
+	-+phase("play");
+	.
+
++win(P) <-
+	-+phase("end");
 	.
 
 +endTurn(P) <-

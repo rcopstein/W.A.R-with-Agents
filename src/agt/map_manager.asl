@@ -15,33 +15,72 @@ border("United States", "Mexico").
 
 /* Plans */
 
-+!start : true <- 
-	?allTerritories(X);
-	.print(X);
-	?allBorders("United States", A);
-	.print(A);
++!start : true.
+
++pick(P, T) <-
+	-pick(P, T)[source(P)];
+	+conquered(P, T, 1);
+	
+	.print(P, " conquered ", T);
+	
+	?numTerritories(NT)
+	?numConqueredTerritories(NCT);
+	
+	if (NT == NCT) { .send("roundManager", tell, allTerritoriesPicked); }
 	.
 
 /* Auxiliary Plans */
 
-+?allTerritories(X) : not territory(T) <-
-	X = [];
++?allTerritories(X) <-
+	.findall(A, territory(A), X)
 	.
-+?allTerritories(X) : territory(T) <-
-	-territory(T);
-	?allTerritories(A);
-	.concat([T], A, X);
-	+territory(T);
++?allConqueredTerritories(X) <-
+	.findall(A, conquered(_, A, _), X);
 	.
 
-+?allBorders(T, X) : not border(T, O) <-
-	X = [];
++?numTerritories(X) <-
+	?allTerritories(A);
+	X = .length(A)
 	.
-+?allBorders(T, X) : border(T, O) <-
-	-border(T, O);
-	?allBorders(T, A);
-	.concat([O], A, X);
-	+border(T, O);
++?numConqueredTerritories(X) <-
+	?allConqueredTerritories(A);
+	X = .length(A)
+	.
+
++?territoryByIndex(I, X) <-
+	?allTerritories(A);
+	.nth(I, A, X);
+	.
+
++?randomTerritory(X) <-
+	?numTerritories(Num);
+	R = math.floor(math.random(Num));
+	?territoryByIndex(R, X);
+	.
++?randomTerritoryNotTaken(X) <-
+	+aux(true);
+	+ter("None");
+	
+	while (aux(CC) & CC) {
+		?randomTerritory(T);
+		if (not conquered(_, T, _)) { -+aux(false); }
+		-+ter(T);
+	}
+	
+	?ter(X);
+	-aux(_);
+	-ter(_);
+	.
+
++?allBorders(T, X) <-
+	.findall(A, border(T, A), X);
+	.
+
++?taken(T, X) : taken(P, T, N) <-
+	X = true;
+	.
++?taken(T, X) : not taken(P, T, N) <-
+	X = false;
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
