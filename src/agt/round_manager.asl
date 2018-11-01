@@ -32,15 +32,6 @@ order([]).
 	
 	.
 
-+allTerritoriesPicked <-
-	-allTerritoriesPicked[source(_)];
-	-+phase("objective");
-	.
-+allObjectivesPicked <-
-	-allObjectivesPicked[source(_)];
-	-+phase("play");
-	.
-
 +win(P) <-
 	-+phase("end");
 	.
@@ -51,6 +42,13 @@ order([]).
 	
 	?whosNext(H);
 	.send(H, tell, turn);
+	.
+
++!allTerritoriesPicked <-
+	-+phase("objective");
+	.
++!allObjectivesPicked <-
+	-+phase("play");
 	.
 
 /* Auxiliary Plans */

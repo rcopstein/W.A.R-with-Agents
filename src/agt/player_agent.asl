@@ -23,13 +23,13 @@
 	
 	if (P == "pick") { !pickOne; !endTurn }
 	elif (P == "objective") { !getObjective; !endTurn }
-	elif (P == "play") { }
+	elif (P == "play") { !placeTroops; !attack; !endTurn }
 	.
 
 +!pickOne <-
 	.my_name(P);
 	.send("mapManager", askOne, randomTerritoryNotTaken(T), randomTerritoryNotTaken(T));
-	.send("mapManager", achieve, pick(P, T));
+	.send("mapManager", askOne, pick(P, T), pick(P, T));
 	.
 +!getObjective <-
 	.send("objManager", askOne, objectives(X), objectives(X));

@@ -7,19 +7,19 @@ given(0).
 /* Plans */
 
 +?objectives(X) <-
-	if (math.random(2) == 0) { ?conquerWhich(X); }
+	J = math.random(2)
+	JJ = math.floor(J)
+	if (JJ == 0) { ?conquerWhich(X); }
 	else { ?conquerCount(X); }
 	
 	?given(Y);
 	-+given(Y+1);
-	.print(Y, " ", Y+1);
 	
 	.send("roundManager", askOne, numPlayers(Z), numPlayers(Z));
-	if (Y+1 == Z) { .send("roundManager", tell, allObjectivesPicked); }
+	if (Y+1 == Z) { .send("roundManager", achieve, allObjectivesPicked); }
 	.
 
 +?conquerWhich(X) <-
-	.print("Here");
 	.send("mapManager", askOne, numTerritories(N), numTerritories(N));
 	
 	+aux([]);
@@ -36,8 +36,6 @@ given(0).
 +?conquerCount(X) <-
 	.send("mapManager", askOne, numTerritories(N), numTerritories(N));
 	.send("roundManager", askOne, numPlayers(NP), numPlayers(NP));
-	.print(N);
-	.print(NP);
 	X = math.ceil(N / NP);
 	.
 
