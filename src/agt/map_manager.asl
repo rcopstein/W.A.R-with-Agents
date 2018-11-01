@@ -222,15 +222,14 @@ border("United States", "Mexico").
 
 +!start : true.
 
-+pick(P, T) <-
-	-pick(P, T)[source(P)];
++!pick(P, T) <-
 	+conquered(P, T, 1);
-	
 	.print(P, " conquered ", T);
 	
 	?numTerritories(NT)
 	?numConqueredTerritories(NCT);
 	
+	.print(NT, " ", NCT);
 	if (NT == NCT) { .send("roundManager", tell, allTerritoriesPicked); }
 	.
 

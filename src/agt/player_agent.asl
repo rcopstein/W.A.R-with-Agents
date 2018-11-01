@@ -18,25 +18,29 @@
 
 +turn <-
 	?phase(P);
-	.print("Phase ", P);
-	
-	if (P == "pick") { !pickOne }
-	elif (P == "objective") { !getObjective }
-	elif (P == "play") { }
-	
 	.my_name(N);
-	.print("Playing: ", N);
-	if (P == "pick") { !endTurn }
+	.print("Playing: ", N, ", Phase: ", P);
+	
+	if (P == "pick") { !pickOne; !endTurn }
+	elif (P == "objective") { !getObjective; !endTurn }
+	elif (P == "play") { }
 	.
 
 +!pickOne <-
 	.my_name(P);
 	.send("mapManager", askOne, randomTerritoryNotTaken(T), randomTerritoryNotTaken(T));
-	.send("mapManager", tell, pick(P, T));
+	.send("mapManager", achieve, pick(P, T));
 	.
 +!getObjective <-
 	.send("objManager", askOne, objectives(X), objectives(X));
-	.print(X);
+	if (.list(X)) {
+		for (.member(Y, X)) {
+			+obj_conquer(Y);
+		}
+	}
+	elif (.number(X)) {
+		+obj_conquer(X);
+	}
 	.
 
 +!endTurn <-
@@ -46,7 +50,6 @@
 
 +?phase(X) <-
 	.send("roundManager", askOne, phase(X), phase(X));
-	.print("Phase ", X);
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

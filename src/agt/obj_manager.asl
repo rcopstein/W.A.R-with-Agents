@@ -1,16 +1,21 @@
 /* Initial beliefs and rules */
 
+given(0).
+
 /* Initial goals */
 
 /* Plans */
 
 +?objectives(X) <-
-	if (math.random(2) == 0) {
-		?conquerWhich(X);
-	}
-	else {
-		?conquerCount(X);
-	}
+	if (math.random(2) == 0) { ?conquerWhich(X); }
+	else { ?conquerCount(X); }
+	
+	?given(Y);
+	-+given(Y+1);
+	.print(Y, " ", Y+1);
+	
+	.send("roundManager", askOne, numPlayers(Z), numPlayers(Z));
+	if (Y+1 == Z) { .send("roundManager", tell, allObjectivesPicked); }
 	.
 
 +?conquerWhich(X) <-

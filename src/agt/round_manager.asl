@@ -46,7 +46,6 @@ order([]).
 	.
 
 +endTurn(P) <-
-	.print(P, "s Turn Ended");
 	-endTurn(P)[source(P)];
 	.send(P, untell, turn);
 	
