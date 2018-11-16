@@ -278,11 +278,152 @@ border("United States", "Mexico").
 	.findall(A, border(T, A), X);
 	.
 
-+?taken(T, X) : taken(P, T, N) <-
++?taken(T, X) : conquered(P, T, N) <-
 	X = true;
 	.
-+?taken(T, X) : not taken(P, T, N) <-
++?taken(T, X) : not conquered(P, T, N) <-
 	X = false;
+	.
+
++?haveMany(P, C, R) <-
+	.findall(T, conquered(P, T, _), X);
+	.length(X, D);
+	R = (D >= C);
+	.
++?haveAll(P, L, R) <-
+	.findall(T, conquered(P, T, _), X);
+	.intersection(X, L, Y);
+	R = (Y == L);
+	.
+
++?closest(P, T, X, D) <-
+	
+	+closest_checked(T);
+	
+	if (conquered(P, T, _)) {
+		
+		X = T;
+		D = 1;
+		
+	}
+	else {
+		
+		+closest_distance(T, 100);
+		
+		?allBorders(T, Y);
+		for ( .member(B, Y) ) {
+			
+			if (not closest_checked(B)) {
+				?closest(P, B, XX, DD);
+				?closest_distance(T, OD);
+				
+				if (DD + 1 < OD) {
+					-+closest_distance(T, DD + 1);
+					-+closest_territory(T, XX);
+				}
+			}
+		}
+		
+		?closest_distance(T, D);
+		?closest_territory(T, X);
+		
+		-closest_distance(T, _);
+		-closest_territory(T, _);
+	}
+	
+	-closest_checked(T);
+	.
++?closestLessTroops(P, T, X, D, A) <-
+
+	+closest_l_troops_checked(T);
+	
+	if (conquered(P, T, AA)) {
+		
+		X = T;
+		D = 1;
+		A = AA;
+		
+	}
+	else {
+		
+		+closest_l_troops_distance(T, 100);
+		+closest_l_troops_armies(T, 10000);
+		
+		?allBorders(T, Y);
+		for ( .member(B, Y) ) {
+			
+			if (not closest_l_troops_checked(B)) {
+				?closestLessTroops(P, B, XX, DD, AA);
+				?closest_l_troops_distance(T, OD);
+				?closest_l_troops_armies(T, OA);
+				
+				if ((DD + 1 < OD) | (DD + 1 == OD & AA < OA)) {
+					-+closest_l_troops_distance(T, DD + 1);
+					-+closest_l_troops_territory(T, XX);
+					-+closest_l_troops_armies(T, AA);
+				}
+			}
+		}
+		
+		?closest_l_troops_armies(T, A);
+		?closest_l_troops_distance(T, D);
+		?closest_l_troops_territory(T, X);
+		
+		-closest_l_troops_armies(T, _);
+		-closest_l_troops_distance(T, _);
+		-closest_l_troops_territory(T, _);
+	}
+	
+	-closest_l_troops_checked(T);
+	.
++?closestMostTroops(P, T, X, D, A) <-
+
+	+closest_m_troops_checked(T);
+	
+	if (conquered(P, T, AA)) {
+		
+		X = T;
+		D = 1;
+		A = AA;
+		
+	}
+	else {
+		
+		+closest_m_troops_distance(T, 100);
+		+closest_m_troops_armies(T, 10000);
+		
+		?allBorders(T, Y);
+		for ( .member(B, Y) ) {
+			
+			if (not closest_m_troops_checked(B)) {
+				?closestMostTroops(P, B, XX, DD, AA);
+				?closest_m_troops_distance(T, OD);
+				?closest_m_troops_armies(T, OA);
+				
+				if ((DD + 1 < OD) | (DD + 1 == OD & AA < OA)) {
+					-+closest_m_troops_distance(T, DD + 1);
+					-+closest_m_troops_territory(T, XX);
+					-+closest_m_troops_armies(T, AA);
+				}
+			}
+		}
+		
+		?closest_m_troops_armies(T, A);
+		?closest_m_troops_distance(T, D);
+		?closest_m_troops_territory(T, X);
+		
+		-closest_m_troops_armies(T, _);
+		-closest_m_troops_distance(T, _);
+		-closest_m_troops_territory(T, _);
+	}
+	
+	-closest_m_troops_checked(T);
+	.
+
++?rateOfSuccess(X, Y, R) <-
+	?conquered(_, X, A1);
+	?conquered(_, Y, A2);
+	R = A1 / (A1 + A2);
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

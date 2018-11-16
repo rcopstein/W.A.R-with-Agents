@@ -23,7 +23,24 @@
 	
 	if (P == "pick") { !pickOne; !endTurn }
 	elif (P == "objective") { !getObjective; !endTurn }
-	elif (P == "play") { !placeTroops; !attack; !endTurn }
+	elif (P == "play") { 
+		
+		?closest("Canada", T, D);
+		.print(T, " ", D);
+		
+		?closestLessTroops("Canada", T, D, A);
+		.print(T, " ", D, " ", A);
+		
+		?closestMostTroops("Canada", T, D, A);
+		.print(T, " ", D, " ", A);
+		
+		?haveMany(2, R1);
+		.print(R1);
+		
+		?haveAll(["Canada"], R2);
+		.print(R2);
+		
+	}
 	.
 
 +!pickOne <-
@@ -50,6 +67,28 @@
 
 +?phase(X) <-
 	.send("roundManager", askOne, phase(X), phase(X));
+	.
+
++?closest(X, Y, D) <-
+	.my_name(N);
+	.send("mapManager", askOne, closest(N, X, Y, D), closest(N, X, Y, D));
+	.
++?closestLessTroops(X, Y, D, A) <-
+	.my_name(N);
+	.send("mapManager", askOne, closestLessTroops(N, X, Y, D, A), closestLessTroops(N, X, Y, D, A));
+	.
++?closestMostTroops(X, Y, D, A) <-
+	.my_name(N);
+	.send("mapManager", askOne, closestMostTroops(N, X, Y, D, A), closestMostTroops(N, X, Y, D, A));
+	.
+
++?haveMany(C, R) <-
+	.my_name(N);
+	.send("mapManager", askOne, haveMany(N, C, R), haveMany(N, C, R));
+	.
++?haveAll(L, R) <-
+	.my_name(N);
+	.send("mapManager", askOne, haveAll(N, L, R), haveAll(N, L, R));
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
