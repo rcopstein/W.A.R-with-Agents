@@ -25,20 +25,11 @@
 	elif (P == "objective") { !getObjective; !endTurn }
 	elif (P == "play") { 
 		
-		?closest("Canada", T, D);
-		.print(T, " ", D);
+		?bestAttackOverall(F2, T2, R2);
+		.print("Best attack overall is from ", F2, " to ", T2, " with rate ", R2);
 		
-		?closestLessTroops("Canada", T, D, A);
-		.print(T, " ", D, " ", A);
-		
-		?closestMostTroops("Canada", T, D, A);
-		.print(T, " ", D, " ", A);
-		
-		?haveMany(2, R1);
-		.print(R1);
-		
-		?haveAll(["Canada"], R2);
-		.print(R2);
+		?checkObjective(R3);
+		if (R3) { !win; }
 		
 	}
 	.
@@ -64,6 +55,10 @@
 	.my_name(N);
 	.send("roundManager", tell, endTurn(N));
 	.
++!win <-
+	.my_name(N);
+	.send("roundManager", tell, win(N));
+	.
 
 +?phase(X) <-
 	.send("roundManager", askOne, phase(X), phase(X));
@@ -82,6 +77,17 @@
 	.send("mapManager", askOne, closestMostTroops(N, X, Y, D, A), closestMostTroops(N, X, Y, D, A));
 	.
 
++?bestAttackFrom(X, T, R) <-
+	.send("mapManager", askOne, bestAttackFrom(X, T, R), bestAttackFrom(X, T, R));
+	.
++?bestAttackOverall(F, T, R) <-
+	.my_name(N);
+	.send("mapManager", askOne, bestAttackOverall(N, ResultFrom, ResultTo, ResultRate), bestAttackOverall(N, ResultFrom, ResultTo, ResultRate));
+	F = ResultFrom;
+	R = ResultRate;
+	T = ResultTo;
+	.
+
 +?haveMany(C, R) <-
 	.my_name(N);
 	.send("mapManager", askOne, haveMany(N, C, R), haveMany(N, C, R));
@@ -89,6 +95,13 @@
 +?haveAll(L, R) <-
 	.my_name(N);
 	.send("mapManager", askOne, haveAll(N, L, R), haveAll(N, L, R));
+	.
++?checkObjective(R) <-
+	.findall(Y, obj_conquer(Y), X);
+	.nth(0, X, K);
+	
+	if (.number(K)) { ?haveMany(K, R); }
+	else { ?haveAll(X, R); }
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

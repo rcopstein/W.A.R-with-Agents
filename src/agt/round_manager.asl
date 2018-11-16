@@ -33,6 +33,7 @@ order([]).
 	.
 
 +win(P) <-
+	.print(P, " won!");
 	-+phase("end");
 	.
 
@@ -51,12 +52,9 @@ order([]).
 	-+phase("play");
 	.
 
-/* Auxiliary Plans */
-
 +?sendBack([H|T], X) <-
 	.concat(T, [H], X);
 	.
-
 +?whosNext(X) <-
 	?order([H|T]);
 	-order([H|T]);

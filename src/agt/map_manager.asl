@@ -223,7 +223,8 @@ border("United States", "Mexico").
 +!start : true.
 
 +?pick(P, T) <-
-	+conquered(P, T, 1);
+
+	+conquered(P, T, math.floor(math.random(2)) + 1);
 	.print(P, " conquered ", T);
 	
 	?numTerritories(NT)
@@ -424,6 +425,75 @@ border("United States", "Mexico").
 	?conquered(_, X, A1);
 	?conquered(_, Y, A2);
 	R = A1 / (A1 + A2);
+	.
++?bestAttackFrom(X, T, R) <-
+	?conquered(P, X, A);
+	?allBorders(X, B);
+	
+	+best_attack_from_terr(X);
+	+best_attack_from_rate(0);
+	
+	for ( .member(M, B) ) {
+		if (not conquered(P, M, _)) {
+			?rateOfSuccess(X, M, RateM);
+			?best_attack_from_rate(OldRate);
+			if (RateM > OldRate) {
+				-+best_attack_from_rate(RateM);
+				-+best_attack_from_terr(M);
+			}
+		}
+	}
+	
+	?best_attack_from_terr(T);
+	?best_attack_from_rate(R);
+	
+	-best_attack_from_terr(_);
+	-best_attack_from_rate(_);
+	
+	.
++?bestAttackOverall(P, ResultFrom, ResultTo, ResultRate) <-
+
+	.findall(T, conquered(P, T, _), MyTerritories);
+	
+	for ( .member(Member, MyTerritories) ) {
+		
+		?bestAttackFrom(Member, Target, Rate);
+		
+		if (not bestAttackOverall_From(_)) {
+			
+			+bestAttackOverall_From(Member);
+			+bestAttackOverall_Rate(Rate);
+			+bestAttackOverall_To(Target);
+			
+		}
+		else {
+			
+			?bestAttackOverall_From(BestFrom);
+			?bestAttackOverall_Rate(BestRate);
+			?bestAttackOverall_To(BestTo);
+			
+			if (Rate > BestRate) {
+				
+				-+bestAttackOverall_From(Member);
+				-+bestAttackOverall_To(Target);
+				-+bestAttackOverall_Rate(Rate);
+				
+			}
+		}
+	}
+	
+	if ( bestAttackOverall_From(_) ) {
+		
+		?bestAttackOverall_From(ResultFrom);
+		?bestAttackOverall_Rate(ResultRate);
+		?bestAttackOverall_To(ResultTo);
+		
+		-bestAttackOverall_From(_);
+		-bestAttackOverall_Rate(_);
+		-bestAttackOverall_To(_);
+		
+	}
+	
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
