@@ -224,7 +224,7 @@ border("United States", "Mexico").
 
 +?pick(P, T) <-
 
-	+conquered(P, T, math.floor(math.random(2)) + 1);
+	+conquered(P, T, 3);
 	.print(P, " conquered ", T);
 	
 	?numTerritories(NT)
@@ -232,7 +232,44 @@ border("United States", "Mexico").
 	if (NT == NCT) { .send("roundManager", achieve, allTerritoriesPicked); }
 	.
 
-/* Auxiliary Plans */
++!attack(Attacker, From, To) <-
+
+	?conquered(Attacker, From, FromArmies);
+	?conquered(Target, To, ToArmies);
+	
+	Luck = math.floor(math.random(2));
+	
+	if ( Luck == 1 ) {
+		
+		// Attack succeeded
+		
+		.print(Attacker, " successfully attacked ", To, " from ", From);
+		-conquered(Target, To, TargetArmies); 
+		+conquered(Target, To, TargetArmies - 1);
+		
+		if ( TargetArmies - 1 == 0 ) {
+			
+			.print(Attacker, " conquered ", To);
+			
+			-conquered(Attacker, From, FromArmies);
+			+conquered(Attacker, From, FromArmies - 1);
+			
+			-conquered(Target, To, 0);
+			+conquered(Attacker, To, 1);
+		}
+		
+	}
+	else {
+		
+		// Attack failed
+		
+		.print(Attacker, " failed an attack to ", To, " from ", From);
+		-conquered(Attacker, From, FromArmies);
+		+conquered(Attacker, From, FromArmies - 1);
+		
+	}
+
+	.
 
 +?allTerritories(X) <-
 	.findall(A, territory(A), X)
@@ -424,77 +461,68 @@ border("United States", "Mexico").
 +?rateOfSuccess(X, Y, R) <-
 	?conquered(_, X, A1);
 	?conquered(_, Y, A2);
-	R = A1 / (A1 + A2);
+	
+	if ( A1 == 1 ) { R = 0; }
+	else { R = A1 / (A1 + A2); }
 	.
 +?bestAttackFrom(X, T, R) <-
+
 	?conquered(P, X, A);
 	?allBorders(X, B);
 	
-	+best_attack_from_terr(X);
-	+best_attack_from_rate(0);
+	+best_attack_from_res(X, 0);
 	
 	for ( .member(M, B) ) {
 		if (not conquered(P, M, _)) {
-			?rateOfSuccess(X, M, RateM);
-			?best_attack_from_rate(OldRate);
-			if (RateM > OldRate) {
-				-+best_attack_from_rate(RateM);
-				-+best_attack_from_terr(M);
-			}
+			
+			?rateOfSuccess(X, M, NewRate);
+			?best_attack_from_res(OldTer, OldRate);
+			if (NewRate > OldRate) { -+best_attack_from_res(M, NewRate); }
+			
 		}
 	}
 	
-	?best_attack_from_terr(T);
-	?best_attack_from_rate(R);
-	
-	-best_attack_from_terr(_);
-	-best_attack_from_rate(_);
+	?best_attack_from_res(T, R);
+	-best_attack_from_res(_, _);
 	
 	.
 +?bestAttackOverall(P, ResultFrom, ResultTo, ResultRate) <-
 
 	.findall(T, conquered(P, T, _), MyTerritories);
 	
-	for ( .member(Member, MyTerritories) ) {
+	for ( .member(Territory, MyTerritories) ) {
 		
-		?bestAttackFrom(Member, Target, Rate);
+		?bestAttackFrom(Territory, Target, Rate);
 		
-		if (not bestAttackOverall_From(_)) {
+		if (not bestAttackOverall(_, _, _)) {
 			
-			+bestAttackOverall_From(Member);
-			+bestAttackOverall_Rate(Rate);
-			+bestAttackOverall_To(Target);
+			+bestAttackOverall(Territory, Target, Rate);
 			
 		}
 		else {
 			
-			?bestAttackOverall_From(BestFrom);
-			?bestAttackOverall_Rate(BestRate);
-			?bestAttackOverall_To(BestTo);
+			?bestAttackOverall(BestFrom, BestTo, BestRate);
 			
-			if (Rate > BestRate) {
+			if (Rate > BestRate & Rate > 0) {
 				
-				-+bestAttackOverall_From(Member);
-				-+bestAttackOverall_To(Target);
-				-+bestAttackOverall_Rate(Rate);
+				-bestAttackOverall(_, _, _);
+				+bestAttackOverall(Territory, Target, Rate);
 				
 			}
 		}
 	}
 	
-	if ( bestAttackOverall_From(_) ) {
+	if ( bestAttackOverall(_, _, _) ) {
 		
-		?bestAttackOverall_From(ResultFrom);
-		?bestAttackOverall_Rate(ResultRate);
-		?bestAttackOverall_To(ResultTo);
-		
-		-bestAttackOverall_From(_);
-		-bestAttackOverall_Rate(_);
-		-bestAttackOverall_To(_);
+		?bestAttackOverall(ResultFrom, ResultTo, ResultRate);
+		-bestAttackOverall(_, _, _);
 		
 	}
 	
 	.
+
+// TODO: Calculate rate of threat as the inverse of rate of success
+// TODO: Check the worst rate of threat and return that territory
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }

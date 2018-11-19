@@ -7,9 +7,11 @@ given(0).
 /* Plans */
 
 +?objectives(X) <-
+
 	J = math.random(2)
 	JJ = math.floor(J)
-	if (JJ == 0) { ?conquerWhich(X); }
+	
+	if (JJ == 0 & false) { ?conquerWhich(X); } // Not supporting specific countries yet!
 	else { ?conquerCount(X); }
 	
 	?given(Y);
@@ -34,9 +36,9 @@ given(0).
 	-aux(_);
 	.
 +?conquerCount(X) <-
-	.send("mapManager", askOne, numTerritories(N), numTerritories(N));
-	.send("roundManager", askOne, numPlayers(NP), numPlayers(NP));
-	X = math.ceil(N / NP);
+	.send("mapManager", askOne, numTerritories(X), numTerritories(X));
+	// .send("roundManager", askOne, numPlayers(NP), numPlayers(NP));
+	// X = math.ceil(N / NP);
 	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }

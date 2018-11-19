@@ -25,12 +25,29 @@
 	elif (P == "objective") { !getObjective; !endTurn }
 	elif (P == "play") { 
 		
-		?bestAttackOverall(F2, T2, R2);
-		.print("Best attack overall is from ", F2, " to ", T2, " with rate ", R2);
+		+rate(1);
 		
-		?checkObjective(R3);
-		if (R3) { !win; }
+		while ( rate(X) & X > 0 ) {
+			
+			?checkObjective(R3);
+			if (R3) { !win; -rate(_); }
+			else {
+				
+				?bestAttackOverall(F2, T2, R2);
+				.print("Best attack overall is from ", F2, " to ", T2, " with rate ", R2);
+				
+				if ( not (F2 == T2) ) {
+					
+					-+rate(R2);
+					if (R2 > 0) { .send("mapManager", achieve, attack(N, F2, T2), attack(N, F2, T2)); }
+					
+				}
+				else { -+rate(0); }
+			}
+		}
 		
+		.print("Turn ended!");	
+		!endTurn;
 	}
 	.
 
