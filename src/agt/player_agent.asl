@@ -25,30 +25,61 @@
 	elif (P == "objective") { !getObjective; !endTurn }
 	elif (P == "play") { 
 		
-		+rate(1);
+		?canPlay(J);
 		
-		while ( rate(X) & X > 0 ) {
-			
+		if ( J ) {
+		
 			?checkObjective(R3);
-			if (R3) { !win; -rate(_); }
+			if (R3) { !win; }
 			else {
+			
+				+rate(1);
+				+place(1);
 				
-				?bestAttackOverall(F2, T2, R2);
-				.print("Best attack overall is from ", F2, " to ", T2, " with rate ", R2);
-				
-				if ( not (F2 == T2) ) {
+				while ( place(X) & X > 0 ) {
 					
-					-+rate(R2);
-					if (R2 > 0) { .send("mapManager", achieve, attack(N, F2, T2), attack(N, F2, T2)); }
+					?worstThreatOverall(T, F, R);
+					.print("Worst threat from ", F, " to ", T, " with a rate ", R);
+					.send("mapManager", achieve, put(N, T), put(N, T));
+					-+place(X-1);
 					
 				}
-				else { -+rate(0); }
+				-place(_);
+				
+				while ( rate(X) & X > 0 ) {
+					
+					?checkObjective(R3);
+					if (R3) { !win; }
+					else {
+						
+						?bestAttackOverall(F2, T2, R2);
+						.print("Best attack overall is from ", F2, " to ", T2, " with rate ", R2);
+						
+						if ( not (F2 == T2) ) {
+							
+							-+rate(R2);
+							if (R2 > 0) { .send("mapManager", achieve, attack(N, F2, T2), attack(N, F2, T2)); }
+							
+						}
+						else { -+rate(0); }
+					}
+				}
+				-rate(_);
+				
 			}
+			
 		}
+		else { .print("Can't play!"); }
 		
 		.print("Turn ended!");	
 		!endTurn;
 	}
+	.
+
++?canPlay(X) <-
+	.my_name(N);
+	.send("mapManager", askOne, numConqueredTerritories(N, Y), numConqueredTerritories(N, Y));
+	.eval(X, Y > 0);
 	.
 
 +!pickOne <-
@@ -100,6 +131,17 @@
 +?bestAttackOverall(F, T, R) <-
 	.my_name(N);
 	.send("mapManager", askOne, bestAttackOverall(N, ResultFrom, ResultTo, ResultRate), bestAttackOverall(N, ResultFrom, ResultTo, ResultRate));
+	F = ResultFrom;
+	R = ResultRate;
+	T = ResultTo;
+	.
+
++?worstThreatTo(X, T, R) <-
+	.send("mapManager", askOne, worstThreatTo(X, T, R), worstThreatTo(X, T, R));
+	.
++?worstThreatOverall(F, T, R) <-
+	.my_name(N);
+	.send("mapManager", askOne, worstThreatOverall(N, ResultFrom, ResultTo, ResultRate), worstThreatOverall(N, ResultFrom, ResultTo, ResultRate));
 	F = ResultFrom;
 	R = ResultRate;
 	T = ResultTo;

@@ -231,6 +231,12 @@ border("United States", "Mexico").
 	?numConqueredTerritories(NCT);
 	if (NT == NCT) { .send("roundManager", achieve, allTerritoriesPicked); }
 	.
++!put(P, T) <-
+	?conquered(P, T, A);
+	-conquered(P, T, A);
+	+conquered(P, T, A+1);
+	.print(P, " placed troops on ", T);
+	.
 
 +!attack(Attacker, From, To) <-
 
@@ -285,6 +291,10 @@ border("United States", "Mexico").
 +?numConqueredTerritories(X) <-
 	?allConqueredTerritories(A);
 	X = .length(A)
+	.
++?numConqueredTerritories(P, X) <-
+	.findall(T, conquered(P, T, _), K);
+	X = .length(K);
 	.
 
 +?territoryByIndex(I, X) <-
@@ -521,8 +531,67 @@ border("United States", "Mexico").
 	
 	.
 
-// TODO: Calculate rate of threat as the inverse of rate of success
-// TODO: Check the worst rate of threat and return that territory
++?rateOfThreat(X, Y, R) <-
+	?rateOfSuccess(Y, X, R);
+	.
++?worstThreatTo(X, T, R) <-
+
+	?conquered(P, X, A);
+	?allBorders(X, B);
+	
+	+worst_threat_to_res(X, 0);
+	
+	for ( .member(M, B) ) {
+		if (not conquered(P, M, _)) {
+			
+			?rateOfThreat(X, M, NewRate);
+			?worst_threat_to_res(OldTer, OldRate);
+			if (NewRate > OldRate) { 
+				-worst_threat_to_res(_, _);
+				+worst_threat_to_res(M, NewRate);
+			}
+			
+		}
+	}
+	
+	?worst_threat_to_res(T, R);
+	-worst_threat_to_res(_, _);
+
+	.
++?worstThreatOverall(P, ResultFrom, ResultTo, ResultRate) <-
+
+	.findall(T, conquered(P, T, _), MyTerritories);
+	
+	for ( .member(Territory, MyTerritories) ) {
+		
+		?worstThreatTo(Territory, Target, Rate);
+		
+		if (not worstThreatOverall(_, _, _)) {
+			
+			+worstThreatOverall(Territory, Target, Rate);
+			
+		}
+		else {
+			
+			?worstThreatOverall(BestFrom, BestTo, BestRate);
+			
+			if (Rate > BestRate) {
+				
+				-worstThreatOverall(_, _, _);
+				+worstThreatOverall(Territory, Target, Rate);
+				
+			}
+		}
+	}
+	
+	if ( worstThreatOverall(_, _, _) ) {
+		
+		?worstThreatOverall(ResultFrom, ResultTo, ResultRate);
+		-worstThreatOverall(_, _, _);
+		
+	}
+	
+	.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }
