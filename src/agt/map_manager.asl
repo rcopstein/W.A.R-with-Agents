@@ -1,7 +1,6 @@
 /* Initial beliefs and rules */
 
-/*
- * territory("Alaska").
+territory("Alaska").
 territory("Aral").
 territory("Argentina").
 territory("Australia").
@@ -203,8 +202,8 @@ border("South_Africa", "Sudan").
 border("Sudan", "South_Africa").
 border("Tchita", "Vladivostok").
 border("Vladivostok", "Tchita").
- */
 
+/*
 territory("Canada").
 territory("Mexico").
 territory("United States").
@@ -213,6 +212,7 @@ border("Canada", "United States").
 border("United States", "Canada").
 border("Mexico", "United States").
 border("United States", "Mexico").
+*/
 
 /* Initial goals */
 
@@ -238,7 +238,7 @@ border("United States", "Mexico").
 	.print(P, " placed troops on ", T);
 	.
 
-+!attack(Attacker, From, To) <-
++?attack(Attacker, From, To) <-
 
 	?conquered(Attacker, From, FromArmies);
 	?conquered(Target, To, ToArmies);
@@ -264,6 +264,8 @@ border("United States", "Mexico").
 			+conquered(Attacker, To, 1);
 		}
 		
+		.print("End Attack");
+		
 	}
 	else {
 		
@@ -272,6 +274,7 @@ border("United States", "Mexico").
 		.print(Attacker, " failed an attack to ", To, " from ", From);
 		-conquered(Attacker, From, FromArmies);
 		+conquered(Attacker, From, FromArmies - 1);
+		.print("End Attack");
 		
 	}
 

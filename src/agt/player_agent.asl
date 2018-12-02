@@ -48,7 +48,8 @@
 				
 				while ( rate(X) & X > 0 ) {
 					
-					?checkObjective(R3);
+					?checkObjective(R4);
+					
 					if (R3) { !win; }
 					else {
 						
@@ -58,7 +59,7 @@
 						if ( not (F2 == T2) ) {
 							
 							-+rate(R2);
-							if (R2 > 0) { .send("mapManager", achieve, attack(N, F2, T2), attack(N, F2, T2)); }
+							if (R2 > 0) { .send("mapManager", askOne, attack(N, F2, T2), attack(N, F2, T2)); }
 							
 						}
 						else { -+rate(0); }
